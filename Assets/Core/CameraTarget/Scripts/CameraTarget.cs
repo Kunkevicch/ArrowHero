@@ -5,19 +5,19 @@ namespace ArrowHero.Core
 {
     public class CameraTarget : MonoBehaviour
     {
-        private Level _level;
+        private GameController _gameController;
         private Player _player;
 
         [Inject]
-        private void Construct(Level level, Player player)
+        private void Construct(GameController gameController, Player player)
         {
-            _level = level;
+            _gameController = gameController;
             _player = player;
         }
 
         private void Start()
         {
-            transform.position = _level.transform.position;
+            transform.position = _gameController.CurrentLevel.transform.position;
         }
 
         private void Update()

@@ -108,8 +108,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 0
+    agentClimb: 0
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -189,73 +189,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &549127304
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.831509
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -17.065353
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -38.85999
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_Name
-      value: Standing 1H Magic Attack 01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ef893a531a079d24e8e677725ef60ac7, type: 2}
-    - target: {fileID: 5866666021909216657, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
-      propertyPath: m_WarningMessage
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9777bafa4da992e4a8fc01ebfaccbc85, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +283,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -404,7 +339,7 @@ Camera:
   far clip plane: 1000
   field of view: 90
   orthographic: 0
-  orthographic size: 6.9
+  orthographic size: 5.53
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -478,7 +413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2771291223351166316, guid: 8ba1f775c40ef2c4a9a284a079f73f75, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2771291223351166316, guid: 8ba1f775c40ef2c4a9a284a079f73f75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -544,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 8.6, z: 0}
+  m_FollowOffset: {x: 0, y: 6, z: 0}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -590,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5297083250749711139, guid: 78aa6566f3fdb6d48a556beb3f665e42, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5297083250749711139, guid: 78aa6566f3fdb6d48a556beb3f665e42, type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971522339340130215, guid: 78aa6566f3fdb6d48a556beb3f665e42, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 6.9
+      value: 5.53
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 591731545990329784, guid: 78aa6566f3fdb6d48a556beb3f665e42, type: 3}

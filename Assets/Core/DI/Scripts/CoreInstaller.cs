@@ -7,13 +7,16 @@ namespace ArrowHero.Core
     {
 
         [SerializeField]
-        private GameController _gameControllerPrefab;
+        private GameController _gameController;
+
+        [SerializeField]
+        private EnemyController _enemyController;
+
+        [SerializeField]
+        private ObjectPool _objectPool;
 
         [SerializeField]
         private Player _playerPrefab;
-
-        [SerializeField]
-        private Level _levelPrefab;
 
         [SerializeField]
         private CoreInput _coreInputPrefab;
@@ -23,9 +26,12 @@ namespace ArrowHero.Core
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<GameController>().FromComponentInNewPrefab(_gameControllerPrefab).AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<GameController>().FromComponentInNewPrefab(_gameController).AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<EnemyController>().FromComponentInNewPrefab(_enemyController).AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<ObjectPool>().FromComponentInNewPrefab(_objectPool).AsSingle().NonLazy();
+            Container.Bind<EnemyFactory>().AsSingle().NonLazy();
+
             Container.BindInterfacesAndSelfTo<Player>().FromComponentInNewPrefab(_playerPrefab).AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<Level>().FromComponentInNewPrefab(_levelPrefab).AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<CoreInput>().FromComponentInNewPrefab(_coreInputPrefab).AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<CameraTarget>().FromComponentInNewPrefab(_cameraTargetPrefab).AsSingle().NonLazy();
         }

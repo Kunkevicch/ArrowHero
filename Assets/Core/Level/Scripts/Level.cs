@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ArrowHero.Core
@@ -8,11 +9,21 @@ namespace ArrowHero.Core
 
         public MeshRenderer GroundMesh=> _groundMesh;
 
+        public LevelConfig LevelConfig => _levelConfig;
+
         [SerializeField]
         private Transform _playerSpawnPoint;
 
         [SerializeField]
         private MeshRenderer _groundMesh;
+
+        [SerializeField]
+        private LevelConfig _levelConfig;
+
+        public List<BaseEnemy> GetLevelEnemies()
+        {
+            return _levelConfig.Enemies;
+        }
 
     }
 }

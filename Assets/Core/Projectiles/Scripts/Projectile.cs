@@ -1,19 +1,16 @@
 using UnityEngine;
 
-namespace TowersDominax.Core
+namespace ArrowHero.Core
 {
     public class Projectile : MonoBehaviour
     {
+        [SerializeField]
+        private float speed;
 
-        public float speed = 10f;
-        // Start is called before the first frame update
-        void Start()
-        {
-            Destroy(gameObject, 1f);
-        }
+        [SerializeField]
+        private LayerMask _impactLayer;
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if ( speed != 0 )
             {
@@ -23,7 +20,25 @@ namespace TowersDominax.Core
             {
                 Debug.Log("Нет скорости!");
             }
+        }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if ( other.gameObject.IsInLayer(_impactLayer) )
+            {
+                DisableAmmo();
+                SpawnEffect();
+            }
+        }
+
+        public void DisableAmmo()
+        {
+            gameObject.SetActive(false);
+        }
+
+        private void SpawnEffect()
+        {
+            Debug.Log("Пиф-паф");
         }
     }
 }

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4805fccd1157ffc4eba62c37f3d48a42, type: 3}
+  m_Name: CoreSOInstaller
+  m_EditorClassIdentifier: 
+  _enemiesType: {fileID: 11400000, guid: 37a517493592a52488f7143c6a3386a7, type: 2}
+  _levelList: {fileID: 11400000, guid: 4c8c22708ce4534438a744e468fc1703, type: 2}

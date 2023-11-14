@@ -19,8 +19,8 @@ namespace ArrowHero.Core
         [Tooltip("Количество здоровья")]
         [Min(1)]
         #endregion
-        private int _healthPoint;
-        public int HealthPoint => _healthPoint;
+        private int _maxHP;
+        public int MaxHP => _maxHP;
 
         #region Attributes
         [SerializeField]
@@ -38,5 +38,12 @@ namespace ArrowHero.Core
         private int _damagePerShot;
         public int DamagePerShot => _damagePerShot;
 
+        #region Attributes
+        [SerializeField]
+        [Header("Снаряд")]
+        [Tooltip("Снаряд, которым стреляет игрок")]
+        #endregion
+        private GameObject _projectilePrefab;
+        public GameObject ProjectilePrefab => _projectilePrefab;
     }
 }

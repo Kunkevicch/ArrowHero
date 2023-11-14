@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0224dedd507f7984cad26b8d603eae08, type: 3}
+  m_Name: PlayerConfig_1
+  m_EditorClassIdentifier: 
+  _moveSpeed: 10
+  _maxHP: 100
+  _attackSpeed: 0.5
+  _damagePerShot: 12
+  _projectilePrefab: {fileID: 758852518234905207, guid: 5a0e068b15e29f5438074ee8a1d2c954, type: 3}

@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bcc4537c1ccad4ab0d72da4d2bdf30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameControllerPrefab: {fileID: 754744652994580698, guid: 0fb11c71c8b817f44807c9c1e0ca22e2, type: 3}
-  _playerPrefab: {fileID: -5650266273676761156, guid: ab8e8f4c1e9a8c045b541cf0bbf989da, type: 3}
-  _levelPrefab: {fileID: 7258881503228771137, guid: 513e3e2927e707e4da42bb9b82125547, type: 3}
+  _gameController: {fileID: 754744652994580698, guid: 0fb11c71c8b817f44807c9c1e0ca22e2, type: 3}
+  _enemyController: {fileID: 8093305111921977198, guid: d2838e9dffebf0248971a4ea5c0b9c84, type: 3}
+  _objectPool: {fileID: 222984129329589180, guid: 250906207bb98834c813bfec8a3126bf, type: 3}
+  _playerPrefab: {fileID: -3596350720200028144, guid: 710b74b5a470a3d44a197c932bb1946c, type: 3}
   _coreInputPrefab: {fileID: 1411050210973127206, guid: 73296c9546d866b438b772412fa767fd, type: 3}
   _cameraTargetPrefab: {fileID: 1096037688060890521, guid: 7be85516251f37b4e8cedf2033018e61, type: 3}
 --- !u!1 &5313867423838292860
@@ -94,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 6dbf945d100116a40a3498d748ea78cd, type: 2}
   _monoInstallers:
   - {fileID: 4111848746333731718}
   _installerPrefabs: []

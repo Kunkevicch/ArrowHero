@@ -17,28 +17,17 @@ namespace ArrowHero.Core
         private CinemachineVirtualCamera _vCam;
         
         private CameraTarget _cameraTarget;
-        private Level _level;
 
         [Inject]
-        private void Construct(CameraTarget cameraTarget, Level level)
+        private void Construct(CameraTarget cameraTarget)
         {
             _cameraTarget = cameraTarget;
-            _level = level;
         }
 
         private void Awake()
         {
             _vCam = GetComponent<CinemachineVirtualCamera>();
             AttachCameraToPlayer();
-        }
-
-        private void Update()
-        {
-            //float fieldWidth = _level.GroundMesh.bounds.size.x;
-            //float fieldHeight = _level.GroundMesh.bounds.size.y;
-            //float fieldAspect = fieldWidth / fieldHeight;
-            //float desiredFieldOfView = 
-            //_vCam.m_Lens.FieldOfView = desiredFieldOfView;
         }
 
         private void AttachCameraToPlayer() 
