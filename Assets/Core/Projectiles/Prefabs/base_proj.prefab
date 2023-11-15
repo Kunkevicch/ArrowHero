@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758852517133096962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.09800053}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.72388, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,7 +83,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.009433746
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -92,7 +92,7 @@ TrailRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.019875512
+        value: 0
         inSlope: -2.1816373
         outSlope: -2.1816373
         tangentMode: 0
@@ -104,8 +104,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.4405482, g: 0.54028267, b: 0.9433962, a: 0.38039216}
-      key1: {r: 0.013616921, g: 0.24728116, b: 0.9622642, a: 1}
+      key0: {r: 0.9433962, g: 0.60959166, b: 0.06674972, a: 0.38039216}
+      key1: {r: 1, g: 0.7796561, b: 0.23113209, a: 1}
       key2: {r: 1, g: 0.7460904, b: 0.13679248, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -166,7 +166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758852517383520009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.16100049}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.3665, z: 1.4525}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -691,7 +691,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 6.283185
-      minScalar: -6.283185
+      minScalar: 6.283185
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2820,11 +2820,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 47.8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2980,7 +2980,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 0
+    separateAxes: 1
     frequency: 0.5
     damping: 1
     octaves: 1
@@ -4978,7 +4978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758852517470296176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.007, z: 0.215}
+  m_LocalPosition: {x: -0.01, y: -0.007, z: 0}
   m_LocalScale: {x: 2.0127, y: 1, z: 2.4815898}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5174,8 +5174,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.8700257, g: 0.051397298, b: 0.990566, a: 1}
-      maxColor: {r: 0.1728818, g: 0.38059732, b: 0.990566, a: 1}
+      minColor: {r: 0.12127312, g: 0.09064613, b: 0.9150943, a: 1}
+      maxColor: {r: 0.9516964, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9774,9 +9774,10 @@ GameObject:
   m_Component:
   - component: {fileID: 758852518234905204}
   - component: {fileID: -534727518775379673}
-  - component: {fileID: 7798084256355079758}
+  - component: {fileID: 4273962719912014445}
+  - component: {fileID: -1811328159881271321}
   m_Layer: 7
-  m_Name: proj_enemy2
+  m_Name: base_proj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9792,7 +9793,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 758852517383520006}
   - {fileID: 758852517470296177}
@@ -9815,8 +9816,8 @@ MonoBehaviour:
   speed: 10
   _impactLayer:
     serializedVersion: 2
-    m_Bits: 64
---- !u!136 &7798084256355079758
+    m_Bits: 0
+--- !u!136 &4273962719912014445
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9830,3 +9831,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-1811328159881271321
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758852518234905207}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

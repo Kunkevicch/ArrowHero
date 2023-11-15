@@ -18,4 +18,4 @@ MonoBehaviour:
   _maxHP: 649
   _attackDelayTimer: 5.78
   _damagePerShot: 10
-  _projectile: {fileID: -534727518775379673, guid: 0e03b6307311eb641b4f4b838b3e0a33, type: 3}
+  _projectile: {fileID: 18317121766248688, guid: ee457b0824b814044ba1186bb48c531c, type: 3}
