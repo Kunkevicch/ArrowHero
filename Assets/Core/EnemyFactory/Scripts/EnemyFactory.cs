@@ -10,7 +10,7 @@ namespace ArrowHero.Core
         public Action EnemyFactoryInitComplete;
         public bool IsInited => _isInited;
 
-        private Dictionary<Type, BaseEnemy> _enemiesPrefab = new Dictionary<Type, BaseEnemy>();
+        private Dictionary<Type, Enemy> _enemiesPrefab = new Dictionary<Type, Enemy>();
 
         private bool _isInited = false;
 
@@ -36,7 +36,7 @@ namespace ArrowHero.Core
             EnemyFactoryInitComplete = null;
         }
 
-        public T GetEnemy<T>(BaseEnemy enemy) where T : BaseEnemy
+        public T GetEnemy<T>(Enemy enemy) where T : Enemy
         {
             var enemyType = enemy.GetType();
             var enemyPrefab = _enemiesPrefab[enemyType];

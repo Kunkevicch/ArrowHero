@@ -5,14 +5,13 @@ namespace ArrowHero.Core
 {
     public class CharacterEvent : MonoBehaviour
     {
-        public Action idle;
-        public Action<float> move;
-        public Action attack;
-        public Action death;
+        public event Action idle;
+        public event Action<float> move;
+        public event Action attack;
+        public event Action death;
 
         public Action<bool> canMove;
         public Action<bool> canAttack;
-        public Action Pause;
 
         public virtual void CallIdle()
         {

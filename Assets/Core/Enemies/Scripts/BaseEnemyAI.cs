@@ -6,13 +6,15 @@ namespace ArrowHero.Core
 {
     public abstract class BaseEnemyAI : MonoBehaviour
     {
-        protected BaseEnemy _enemy;
+        protected Enemy _enemy;
 
         protected Player _player;
 
         protected NavMeshAgent _agent;
 
         protected bool _isVisible;
+
+        protected bool _isDead;
 
         protected ObjectPool _objectPool;
 
@@ -39,8 +41,23 @@ namespace ArrowHero.Core
 
         protected virtual void Awake()
         {
-            _enemy = GetComponent<BaseEnemy>();
+            _enemy = GetComponent<Enemy>();
             _agent = GetComponent<NavMeshAgent>();
+        }
+
+        protected void OnEnable()
+        {
+            _enemy.EnemyEvent.death += OnDeath;
+        }
+
+        private void OnDeath()
+        {
+            _isDead = true;
+        }
+
+        private void OnDisable()
+        {
+            _enemy.EnemyEvent.death -= OnDeath;
         }
 
         public abstract void MoveToRandomPoint();

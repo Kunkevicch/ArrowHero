@@ -10,6 +10,13 @@ namespace ArrowHero.Core
         [SerializeField]
         private LayerMask _impactLayer;
 
+        private int _damage;
+
+        public void InitProjectile(int damage)
+        {
+            _damage = damage;
+        }
+
         private void Update()
         {
             if ( speed != 0 )
@@ -26,19 +33,24 @@ namespace ArrowHero.Core
         {
             if ( other.gameObject.IsInLayer(_impactLayer) )
             {
+                DealDamage(other.GetComponent<BaseHealth>());
                 DisableAmmo();
                 SpawnEffect();
             }
         }
 
-        public void DisableAmmo()
+        private void DealDamage(BaseHealth health)
+        {
+            health.TakeDamage(_damage);
+        }
+
+        private void DisableAmmo()
         {
             gameObject.SetActive(false);
         }
 
         private void SpawnEffect()
         {
-            Debug.Log("Ïטפ-ןאפ");
         }
     }
 }

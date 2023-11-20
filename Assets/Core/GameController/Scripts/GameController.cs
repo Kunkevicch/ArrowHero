@@ -8,6 +8,7 @@ namespace ArrowHero.Core
     {
 
         public Action<GameStage> GameStageChange;
+        public event Action GamePaused;
 
         private GameStage _currentGameStage = GameStage.Preparation;
         public GameStage CurrentGameStage 
@@ -56,6 +57,7 @@ namespace ArrowHero.Core
         private void OnEnable()
         {
             _enemyController.EnemySpawned += OnEnemySpawned;
+            _enemyController.EnemiesCleared += OnEnemiesCleared;
         }
 
         private void SelectRandomLevel()
@@ -73,9 +75,16 @@ namespace ArrowHero.Core
             _player.transform.position = new Vector3(_currentLevel.PlayerSpawnPoint.position.x, _currentLevel.PlayerSpawnPoint.position.y+1, _currentLevel.PlayerSpawnPoint.position.z);
         }
 
+        private void OnEnemiesCleared()
+        {
+            Debug.Log("Уровень зачищен");
+            CurrentGameStage = GameStage.Victory;
+        }
+
         private void OnDisable()
         {
             _enemyController.EnemySpawned -= OnEnemySpawned;
+            _enemyController.EnemiesCleared += OnEnemiesCleared;
         }
 
         private void OnEnemySpawned()
@@ -89,6 +98,7 @@ namespace ArrowHero.Core
         Preparation,
         GameLoop,
         Failed,
-        Victory
+        Victory,
+        Pause
     }
 }

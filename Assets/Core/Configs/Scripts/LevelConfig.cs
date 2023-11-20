@@ -19,7 +19,7 @@ namespace ArrowHero.Core
         [Header("Список врагов")]
         [Tooltip("Список врагов")]
         #endregion
-        private List<BaseEnemy> _enemies; 
-        public List<BaseEnemy> Enemies => _enemies;
+        private List<Enemy> _enemies; 
+        public List<Enemy> Enemies => _enemies;
     }
 }

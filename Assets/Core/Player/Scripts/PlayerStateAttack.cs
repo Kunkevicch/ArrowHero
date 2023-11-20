@@ -66,6 +66,7 @@ namespace ArrowHero.Core
             Vector3 targetEnemy = _enemyController.GetNearestEnemyPosition(_player.transform.position);
             _player.transform.LookAt(new Vector3(targetEnemy.x, 1f, targetEnemy.z));
             Projectile projectile = (Projectile)_objectPool.ReuseComponent(_player.PlayerConfig.ProjectilePrefab, _player.AttackPoint.position, _player.transform.rotation);
+            projectile.InitProjectile(_player.PlayerConfig.DamagePerShot);
             projectile.gameObject.SetActive(true);
         }
     }

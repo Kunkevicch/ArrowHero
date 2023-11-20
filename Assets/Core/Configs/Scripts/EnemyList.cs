@@ -5,6 +5,6 @@ namespace ArrowHero.Core
 {
     public class EnemyList : MonoBehaviour
     {
-        List<BaseEnemy> enemies;
+        List<Enemy> enemies;
     }
 }

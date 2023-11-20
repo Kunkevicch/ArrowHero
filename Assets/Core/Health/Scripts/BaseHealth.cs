@@ -21,10 +21,10 @@ namespace ArrowHero.Core
         protected int _currentHP;
         public int CurrentHP => _currentHP;
 
-        protected bool _isDead = false;
+        protected bool _isDead;
         public bool IsDead => _isDead;
 
-        protected abstract void HealthInit();
+        protected abstract void InitHealth();
         public abstract void TakeDamage(int damage);
 
         

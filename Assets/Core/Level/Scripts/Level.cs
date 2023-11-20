@@ -20,7 +20,7 @@ namespace ArrowHero.Core
         [SerializeField]
         private LevelConfig _levelConfig;
 
-        public List<BaseEnemy> GetLevelEnemies()
+        public List<Enemy> GetLevelEnemies()
         {
             return _levelConfig.Enemies;
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace ArrowHero.Core
 {
@@ -13,12 +14,23 @@ namespace ArrowHero.Core
         private Transform _objectPoolTransform;
         private Dictionary<int, Queue<Component>> _poolDictionary = new Dictionary<int, Queue<Component>>();
 
+        private Coroutine _createPoolWithDelay;
+        private float _poolDelay;
         [System.Serializable]
         public struct Pool
         {
             public int poolSize;
             public GameObject prefab;
             public string componentType;
+            public bool isInjected;
+        }
+
+        private DiContainer _container;
+
+        [Inject]
+        private void Construct(DiContainer diContainer)
+        {
+            _container = diContainer;
         }
 
         private void Start()
@@ -27,11 +39,11 @@ namespace ArrowHero.Core
 
             for ( int i = 0; i < _poolArray.Length; i++ )
             {
-                CreatePool(_poolArray[i].prefab, _poolArray[i].poolSize, _poolArray[i].componentType);
+                CreatePool(_poolArray[i].prefab, _poolArray[i].poolSize, _poolArray[i].componentType, _poolArray[i].isInjected);
             }
         }
 
-        private void CreatePool(GameObject prefab, int poolSize, string componentType)
+        private void CreatePool(GameObject prefab, int poolSize, string componentType, bool isInjected)
         {
             int poolKey = prefab.GetInstanceID();
 
@@ -47,7 +59,16 @@ namespace ArrowHero.Core
 
                 for ( int i = 0; i < poolSize; i++ )
                 {
-                    GameObject newObject = Instantiate(prefab, parentGameObject.transform) as GameObject;
+                    GameObject newObject;
+
+                    if ( !isInjected )
+                    {
+                        newObject = Instantiate(prefab, parentGameObject.transform) as GameObject;
+                    }
+                    else
+                    {
+                        newObject = _container.InstantiatePrefab(prefab, parentGameObject.transform) as GameObject;
+                    }
 
                     newObject.SetActive(false);
 

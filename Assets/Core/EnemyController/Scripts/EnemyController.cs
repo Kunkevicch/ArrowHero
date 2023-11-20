@@ -10,6 +10,7 @@ namespace ArrowHero.Core
     public class EnemyController : MonoBehaviour
     {
         public Action EnemySpawned;
+        public Action EnemiesCleared;
 
         private GameController _gameController;
         private EnemyFactory _enemyFactory;
@@ -17,14 +18,19 @@ namespace ArrowHero.Core
         private Coroutine _enemySpawnCoroutine;
         private WaitForFixedUpdate _waitForFixedUpdate;
 
-        private List<BaseEnemy> _currentEnemies = new();
+        private Coroutine _enemyDiedCoroutine;
+
+        private const float WAIT_TIMER = 3f;
+
+        [SerializeField]
+        private List<Enemy> _currentEnemies = new();
 
         public bool IsEnemyExists()
         {
             return _currentEnemies.Count > 0;
         }
 
-        public List<BaseEnemy> GetCurrentEnemies()
+        public List<Enemy> GetCurrentEnemies()
         {
             return _currentEnemies;
         }
@@ -35,11 +41,11 @@ namespace ArrowHero.Core
             
             if ( currentLevel.GetLevelEnemies().Count == 0 ) return Vector3.zero;
 
-            List<BaseEnemy> enemies = GetCurrentEnemies();
+            List<Enemy> enemies = GetCurrentEnemies();
 
             float minDistance = float.MaxValue;
-            BaseEnemy nearestEnemy = enemies.Last();
-            foreach ( BaseEnemy enemy in enemies )
+            Enemy nearestEnemy = enemies.Last();
+            foreach ( Enemy enemy in enemies )
             {
                 float distance = ( enemy.transform.position - origin ).sqrMagnitude;
                 if ( distance < minDistance )
@@ -89,7 +95,7 @@ namespace ArrowHero.Core
             while ( listIndex>= 0)
             {
                 var lastEnemy = _gameController.CurrentLevel.GetLevelEnemies()[listIndex];
-                var enemy = SpawnEnemy<BaseEnemy>(lastEnemy);
+                var enemy = SpawnEnemy<Enemy>(lastEnemy);
                 listIndex--;
                 enemy.transform.position = Vector3.zero;
                 _currentEnemies.Add(enemy);
@@ -100,11 +106,40 @@ namespace ArrowHero.Core
             EnemySpawned?.Invoke();
         }
 
-        private BaseEnemy SpawnEnemy<T>(BaseEnemy enemyType) where T : BaseEnemy
+        private Enemy SpawnEnemy<T>(Enemy enemyType) where T : Enemy
         {
             var enemy = _enemyFactory.GetEnemy<T>(enemyType);
             return enemy;
         }
 
+        private void OnEnable()
+        {
+            EnemyEvent.enemyDied += OnEnemyDied;
+        }
+
+        private void OnEnemyDied(Enemy enemy)
+        {
+            _currentEnemies.Remove(enemy);
+            if(_currentEnemies.Count == 0 )
+            {
+                _enemyDiedCoroutine = StartCoroutine(EnemyDiedWithDelay());
+            }
+        }
+
+        private IEnumerator EnemyDiedWithDelay()
+        {
+            WaitForSeconds wait = new WaitForSeconds(WAIT_TIMER);
+            Debug.Log("Началось!");
+            yield return wait;
+            Debug.Log("Все!");
+            EnemiesCleared?.Invoke();
+            StopCoroutine(_enemyDiedCoroutine);
+            _enemyDiedCoroutine = null;
+        }
+
+        private void OnDisable()
+        {
+            EnemyEvent.enemyDied -= OnEnemyDied;
+        }
     }
 }

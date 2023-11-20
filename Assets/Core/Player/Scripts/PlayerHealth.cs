@@ -22,10 +22,10 @@ namespace ArrowHero.Core
         private void Awake()
         {
             _player = GetComponent<Player>();
-            HealthInit();
+            InitHealth();
         }
 
-        protected override void HealthInit()
+        protected override void InitHealth()
         {
             MaxHP = _player.PlayerConfig.MaxHP;
             _currentHP = MaxHP;

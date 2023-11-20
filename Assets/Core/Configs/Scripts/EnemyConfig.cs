@@ -50,8 +50,8 @@ namespace ArrowHero.Core
         [Header("Урон за выстрел")]
         [Tooltip("Урон за выстрел/удар")]
         #endregion
-        private float _damagePerShot;
-        public float DamagePerShot => _damagePerShot;
+        private int _damagePerShot;
+        public int DamagePerShot => _damagePerShot;
 
         #region Attributes
         [SerializeField]

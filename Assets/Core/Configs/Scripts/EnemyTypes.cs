@@ -6,10 +6,10 @@ namespace ArrowHero.Core
     [CreateAssetMenu(fileName = "EnemiesType", menuName = "Configs/Enemy/Type")]
     public class EnemyTypes : ScriptableObject
     {
-        public List<BaseEnemy> EnemyTypeList => _enemyTypeList;
+        public List<Enemy> EnemyTypeList => _enemyTypeList;
 
         [SerializeField]
-        private List<BaseEnemy> _enemyTypeList;
+        private List<Enemy> _enemyTypeList;
 
     }
 }

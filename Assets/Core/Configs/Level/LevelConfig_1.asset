@@ -14,6 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelName: "\u0422\u0435\u0441\u0442"
   _enemies:
-  - {fileID: 5734808645626269668, guid: 3f1a8fd0cafb10a43af83f3c5c7a9ed1, type: 3}
-  - {fileID: 5734808645626269668, guid: 3f1a8fd0cafb10a43af83f3c5c7a9ed1, type: 3}
   - {fileID: 1308053482243575242, guid: ea2acbf59290b484193ca8875798fa18, type: 3}

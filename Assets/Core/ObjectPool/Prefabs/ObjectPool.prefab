@@ -46,8 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolArray:
   - poolSize: 10
-    prefab: {fileID: 758852518234905207, guid: 5a0e068b15e29f5438074ee8a1d2c954, type: 3}
+    prefab: {fileID: 8237834876525900704, guid: ee457b0824b814044ba1186bb48c531c, type: 3}
     componentType: ArrowHero.Core.Projectile
+    isInjected: 0
   - poolSize: 10
     prefab: {fileID: 5368562083455902227, guid: 4ff658066384510439887c78500e9e26, type: 3}
     componentType: ArrowHero.Core.Projectile
+    isInjected: 0
+  - poolSize: 50
+    prefab: {fileID: 7055849803776415060, guid: 5a3ff7dbc31b64340806f8e96ab70fa8, type: 3}
+    componentType: ArrowHero.Core.Coin
+    isInjected: 1

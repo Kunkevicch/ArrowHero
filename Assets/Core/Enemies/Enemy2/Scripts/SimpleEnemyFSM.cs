@@ -20,6 +20,16 @@ namespace ArrowHero.Core
             _enemy = GetComponent<SimpleEnemy>();
         }
 
+        private void OnEnable()
+        {
+            _enemy.EnemyEvent.death += OnDeath;
+        }
+
+        private void OnDeath()
+        {
+            _fsm.SetState<SimpleEnemyDeadState>();
+        }
+
         private void Start()
         {
             _fsm = new FSM();
@@ -27,6 +37,7 @@ namespace ArrowHero.Core
             _fsm.AddState(new SimpleEnemyIdleState(_fsm, _enemy));
             _fsm.AddState(new SimpleEnemyMoveState(_fsm, _enemy));
             _fsm.AddState(new SimpleEnemyAttackState(_fsm, _enemy));
+            _fsm.AddState(new SimpleEnemyDeadState(_fsm,_enemy));
             _fsm.SetState<SimpleEnemyIdleState>();
 
         }
