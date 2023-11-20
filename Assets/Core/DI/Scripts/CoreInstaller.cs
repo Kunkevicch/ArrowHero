@@ -13,6 +13,9 @@ namespace ArrowHero.Core
         private EnemyController _enemyController;
 
         [SerializeField]
+        private ScoreController _scoreController;
+
+        [SerializeField]
         private ObjectPool _objectPool;
 
         [SerializeField]
@@ -28,6 +31,7 @@ namespace ArrowHero.Core
         {
             Container.BindInterfacesAndSelfTo<GameController>().FromComponentInNewPrefab(_gameController).AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<EnemyController>().FromComponentInNewPrefab(_enemyController).AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<ScoreController>().FromComponentInNewPrefab(_scoreController).AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<ObjectPool>().FromComponentInNewPrefab(_objectPool).AsSingle().NonLazy();
             Container.Bind<EnemyFactory>().AsSingle().NonLazy();
 

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameController: {fileID: 754744652994580698, guid: 0fb11c71c8b817f44807c9c1e0ca22e2, type: 3}
   _enemyController: {fileID: 8093305111921977198, guid: d2838e9dffebf0248971a4ea5c0b9c84, type: 3}
+  _scoreController: {fileID: -8080186138497622164, guid: 895ba30f1540376428b7418f9e103ee6, type: 3}
   _objectPool: {fileID: 222984129329589180, guid: 250906207bb98834c813bfec8a3126bf, type: 3}
   _playerPrefab: {fileID: -3596350720200028144, guid: 710b74b5a470a3d44a197c932bb1946c, type: 3}
   _coreInputPrefab: {fileID: 1411050210973127206, guid: 73296c9546d866b438b772412fa767fd, type: 3}
